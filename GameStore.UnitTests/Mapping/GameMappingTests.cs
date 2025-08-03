@@ -37,13 +37,20 @@ public class GameMappingTests
     public void ToGameDetailsDto_Game_ReturnsCorrectValues()
     {
         // Arrange
-        // Done in constructor
+        var expected = new GameDetailsDto(
+            _game.Id,
+            _game.Name,
+            _game.GenreId,
+            _game.Price,
+            _game.ReleaseDate
+        );
 
         // Act
         var result = _game.ToGameDetailsDto();
 
         // Assert
         // Default Xunit syntax
+            // Testing each attribute
         Assert.NotNull(result);
         Assert.Equal(_game.Id, result.Id);
         Assert.Equal(_game.Name, result.Name);
@@ -51,6 +58,8 @@ public class GameMappingTests
         Assert.Equal(_game.Price, result.Price);
         Assert.Equal(_game.ReleaseDate, result.ReleaseDate);
         Assert.IsType<GameDetailsDto>(result);
+            // Testing the entire object
+        Assert.Equivalent(expected, result);
         // Using fluent assertions package
         result.Should().NotBeNull();
         result.Id.Should().Be(_game.Id);
@@ -59,13 +68,23 @@ public class GameMappingTests
         result.Price.Should().Be(_game.Price);
         result.ReleaseDate.Should().Be(_game.ReleaseDate);
         result.Should().BeOfType<GameDetailsDto>();
+            // Testing the entire object
+        result.Should().BeEquivalentTo(expected);
     }
 
     [Fact]
     public void ToGameSummaryDto_Game_ReturnsCorrectValues()
     {
+        var expected = new GameSummaryDto(
+            _game.Id,
+            _game.Name,
+            _game.Genre!.Name,
+            _game.Price,
+            _game.ReleaseDate
+        );
+
         var result = _game.ToGameSummaryDto();
-        
+
         Assert.NotNull(result);
         Assert.Equal(_game.Id, result.Id);
         Assert.Equal(_game.Name, result.Name);

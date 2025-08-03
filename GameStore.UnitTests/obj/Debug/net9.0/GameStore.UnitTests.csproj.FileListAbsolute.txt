@@ -148,3 +148,4 @@
 /Users/gianpaolopapaiz/Code/DotNet/GameStore/GameStore.UnitTests/obj/Debug/net9.0/GameStore.UnitTests.genruntimeconfig.cache
 /Users/gianpaolopapaiz/Code/DotNet/GameStore/GameStore.UnitTests/obj/Debug/net9.0/ref/GameStore.UnitTests.dll
 /Users/gianpaolopapaiz/Code/DotNet/GameStore/GameStore.UnitTests/bin/Debug/net9.0/FluentAssertions.dll
+/Users/gianpaolopapaiz/Code/DotNet/GameStore/GameStore.UnitTests/obj/Debug/net9.0/GameStore.UnitTests.sourcelink.json
